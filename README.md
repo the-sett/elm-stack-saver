@@ -1,12 +1,12 @@
 # elm-stack-saver
 
-A Python tool to find recursive cycles and closure-capture bugs in compiled Elm JavaScript files.
+A Python tool to find recursive cycles and closure-capture bugs (which can lead to stack overflow) in compiled Elm JavaScript files.
 
 ## Why?
 
 Elm compiles to JavaScript, and this tool helps identify two classes of problems:
 
-1. **Recursive cycles** that might cause stack overflows if not properly tail-call optimized:
+1. **Recursive cycles** that might cause stack overflows if not tail-call optimized:
    - Self-recursive functions
    - Mutual recursion cycles (A calls B, B calls C, C calls A)
 
